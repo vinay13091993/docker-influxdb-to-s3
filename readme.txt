@@ -123,8 +123,26 @@ time                host    region  value
 *. To start a docker image
 	docker run
 
-*. To get inside a docker image
+*. To get inside a docker container
 	docker exec -i -t <containerId> bash
 	
-*. To kill a docker image
+*. To kill a docker ps
 	docker kill <containerId>
+
+*. To remove a docker image
+	docker rmi <imageId>
+
+*. To remove a docker ps
+	docker rm <containerId>
+
+*. To build an image in current folder
+	docker build -t influxdb-to-s3 .
+
+*. To tag your build
+	docker tag influxdb-to-s3 vinayk10/influxdb-to-s3
+
+*. To push a build
+	docker push vinayk10/influxdb-to-s3
+
+* To pull a docker image
+	docker pull vinayk10/influxdb-to-s3
