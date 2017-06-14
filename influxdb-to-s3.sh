@@ -66,7 +66,7 @@ backup() {
     echo "Failed to create timestamped backup"
     exit 1
   fi
-
+  aws s3api put-object-tagging --key ${S3_KEY_PREFIX}${DATETIME}.tgz --bucket $S3_BUCKET --tagging "TagSet=[{Key=flag,Value=1}]"
   echo "Done"
 }
 
